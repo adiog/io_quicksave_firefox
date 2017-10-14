@@ -1,5 +1,5 @@
 // This file is a part of quicksave project.
-// Copyright (c) 2016 Aleksander Gajewski <adiog@brainfuck.pl>.
+// Copyright (c) 2017 Aleksander Gajewski <adiog@quicksave.io>.
 
 function notify_success(message)
 {
@@ -40,35 +40,38 @@ function do_item_create_request(tab, item_type, title) {
             else {
                 notify_failure('Item was not saved (' + data.message + ').');
             }
+        },
+        function (data) {
+            notify_failure('Item was not saved (' + data.message + ').');
         }
     );
 }
 
 function context_menu_page_callback(info, tab)
 {
-    var title = info.pageUrl;
-    var item_type = 'page';
+    let title = info.pageUrl;
+    let item_type = 'page';
     do_item_create_request(tab, item_type, title);
 }
 
 function context_menu_link_callback(info, tab)
 {
-    var title = info.linkUrl;
-    var item_type = 'link';
+    let title = info.linkUrl;
+    let item_type = 'link';
     do_item_create_request(tab, item_type, title);
 }
 
 function context_menu_selection_callback(info, tab)
 {
-    var title = info.selectionText;
-    var item_type ='selection';
+    let title = info.selectionText;
+    let item_type ='selection';
     do_item_create_request(tab, item_type, title);
 }
 
 function context_menu_image_callback(info, tab)
 {
-    var title = info.srcUrl;
-    var item_type = 'image';
+    let title = info.srcUrl;
+    let item_type = 'image';
     do_item_create_request(tab, item_type, title);
 }
 
@@ -81,9 +84,9 @@ function toolbar_button_callback()
         },
         function(tabs)
         {
-            var tab = tabs[0];
-            var title = tab.url;
-            var item_type = 'page';
+            let tab = tabs[0];
+            let title = tab.url;
+            let item_type = 'page';
             do_item_create_request(tab, item_type, title);
         }
     );

@@ -43,9 +43,9 @@ const API = {
         },
 
     create:
-    function(meta, successCallback)
+    function(meta, successCallback, failureCallback)
     {
-        Request.json_post(env.HTTPS_API_QUICKSAVE_IO + '/create', {'meta': meta}, successCallback);
+        Request.json_post(env.HTTPS_API_QUICKSAVE_IO + '/create', {'meta': meta}, successCallback, failureCallback);
     },
 
     retrieve:

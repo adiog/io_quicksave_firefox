@@ -1,5 +1,5 @@
 // This file is a part of quicksave project.
-// Copyright (c) 2016 Aleksander Gajewski <adiog@brainfuck.pl>.
+// Copyright (c) 2017 Aleksander Gajewski <adiog@quicksave.io>.
 
 browser.contextMenus.create(
     {
@@ -32,3 +32,5 @@ browser.contextMenus.create(
         'onclick': context_menu_image_callback
     }
 );
+
+browser.browserAction.onClicked.addListener(toolbar_button_callback);

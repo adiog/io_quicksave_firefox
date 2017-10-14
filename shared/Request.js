@@ -7,7 +7,7 @@ function convert_get_method_parameters_to_url_suffix(parameters) {
     for (let key in parameters) {
         let parameter = key + '=' + encodeURIComponent(parameters[key]);
 
-        if (url_suffix == '') {
+        if (url_suffix === '') {
             url_suffix += '?' + parameter;
         }
         else {
@@ -23,7 +23,7 @@ function requestOnLoad(request, successCallback, failureCallback)
 {
     return function() {
         log(request);
-        if (request.status == 200) {
+        if (request.status === 200) {
             try {
                 parsedResponseText = JSON.parse(this.responseText);
             }
@@ -32,7 +32,7 @@ function requestOnLoad(request, successCallback, failureCallback)
             }
             successCallback(parsedResponseText);
         }
-        else if (failureCallback != null) {
+        else if (failureCallback !== null) {
             try {
                 parsedResponseText = JSON.parse(this.responseText);
             }
@@ -52,11 +52,11 @@ function requestOnError(errorCallback, failureCallback)
 {
     return function(e) {
         log(e);
-        if (errorCallback != null)
+        if (errorCallback !== null)
         {
             errorCallback(e);
         }
-        else if (failureCallback != null)
+        else if (failureCallback !== null)
         {
             failureCallback(e);
         }
