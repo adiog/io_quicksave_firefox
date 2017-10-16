@@ -33,4 +33,20 @@ browser.contextMenus.create(
     }
 );
 
+browser.contextMenus.create(
+    {
+        'title': 'quicksave audio',
+        'contexts': ['audio'],
+        'onclick': context_menu_audio_callback
+    }
+);
+
+browser.contextMenus.create(
+    {
+        'title': 'quicksave video',
+        'contexts': ['video'],
+        'onclick': context_menu_video_callback
+    }
+);
+
 browser.browserAction.onClicked.addListener(toolbar_button_callback);

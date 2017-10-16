@@ -75,6 +75,20 @@ function context_menu_image_callback(info, tab)
     do_item_create_request(tab, item_type, title);
 }
 
+function context_menu_audio_callback(info, tab)
+{
+    let title = info.srcUrl;
+    let item_type = 'audio';
+    do_item_create_request(tab, item_type, title);
+}
+
+function context_menu_video_callback(info, tab)
+{
+    let title = info.srcUrl;
+    let item_type = 'video';
+    do_item_create_request(tab, item_type, title);
+}
+
 function toolbar_button_callback()
 {
     browser.tabs.query(
